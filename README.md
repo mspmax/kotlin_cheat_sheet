@@ -6,3 +6,4 @@
 
 ### Quick Navigation
 * [Properties(val/var)](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/PropertyValues.kt)
+* Classes(Data,Sealed,Enum,Inline)
