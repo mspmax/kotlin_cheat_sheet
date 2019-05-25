@@ -101,3 +101,9 @@ lateinit var strLateInit: String
  */
 
 const val KEY_COLUMN_NAME: String = "key_name"
+
+/**
+ * Using standard functions on properties
+ */
+
+val stringProperty = "first property".also(::println)// same as .also({println(it)})
