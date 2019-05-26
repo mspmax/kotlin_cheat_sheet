@@ -68,6 +68,9 @@ interface AwesomePerson : Named {
     override val name: String get() = "$firstName $lastName"
 }
 
+/**
+ * On a separate note this is an example of implementing members in the constructor
+ */
 data class Employee(
     // implementing 'name' is not required
     override val firstName: String,
