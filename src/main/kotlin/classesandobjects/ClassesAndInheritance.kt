@@ -23,6 +23,7 @@ package classesandobjects
  *
  *  - Inside an inner class, accessing the superclass of the outer class is done with the super keyword qualified
  *    with the outer class name: super@Outer:
+ *  - Abstract classes are open by default
  */
 fun main() {
 
@@ -97,7 +98,7 @@ val person = Person("John Doe") // it's just like a function, bit weired though.
 
 class NoParent //not really true cause everyone has a parent. This implicitly inherits from 'Any'
 
-abstract class Animal(brain: String, heart: String) //  abstract classes are open by default
+abstract class Animal(brain: String, heart: String)
 
 open class Bird(wings: String, brain: String, heart: String) :
     Animal(brain, heart) // open is specified here because to allow extendability
@@ -194,12 +195,12 @@ open class Derived : Base {
     fun dayOfTheWeek(): String = "Saturday"
 }
 
-class SecondDerived(name: String) : Derived(name) {
-
-}
+class SecondDerived(name: String) : Derived(name)
 
 /**
  * Inner classes
+ *  - when accessing outer class members(properties/functions) inner class has to specify the
+ *    outer class eg: super@outerClass.function()
  */
 
 open class Foo {
@@ -223,7 +224,7 @@ class Bar : Foo() {
 }
 
 /**
- * Overriding rules
+ * Overriding rules - for you to find out ;)
  */
 
 open class A {
