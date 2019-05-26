@@ -49,6 +49,9 @@ val numWithLazy by lazy { 100 } // only used with immutable properties
  *
  *  A backing field will be generated for a property if it uses the default implementation
  *  of at least one of the accessors, or if a custom accessor references it through the field identifier.
+ *
+ *  NOTE: var's should always be initialised with the exception when declared within an interface. This is cause
+ *  interfaces can not contain state !
  */
 
 var str = "kotlin is awesome !" // Note: the initializer assigns the backing field directly
