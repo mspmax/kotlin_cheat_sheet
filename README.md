@@ -13,3 +13,4 @@
   * [Enum](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/EnumClasses.kt)
   * Nested and Inner
 * [Interfaces(properrties, implementing, inheritance)](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/Interfaces.kt)
+* [Visibility Modifiers(public vs private)](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/VisibilityModifiers.kt)
