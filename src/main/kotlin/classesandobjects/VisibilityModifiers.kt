@@ -18,7 +18,7 @@ fun main() {
  *  - public : default one, if not specified explicitly. Visible everywhere
  *
  */
-private fun foo() {} // visible inside example.kt
+private fun foo() {} // visible inside VisibilityModifiers.kt
 
 var bar: Int = 5 // property is visible everywhere
     private set         // setter is visible only in VisibilityModifiers.kt
