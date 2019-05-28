@@ -7,4 +7,9 @@
 ### Quick Navigation
 * [Properties(val/var)](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/PropertyValues.kt)
 * [Classes(open, constructors, inheritance)](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/ClassesAndInheritance.kt)
-* Interfaces(properrties, implementing, inheritance)
+  * Data
+  * Sealed
+  * Inline
+  * Enum
+  * Nested and Inner
+* [Interfaces(properrties, implementing, inheritance)](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/Interfaces.kt)
