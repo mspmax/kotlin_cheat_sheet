@@ -7,7 +7,7 @@
 ### Quick Navigation
 * [Properties(val/var)](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/PropertyValues.kt)
 * [Classes(open, constructors, inheritance)](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/ClassesAndInheritance.kt)
-  * Data
+  * [Data](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/DataClasses.kt)
   * Sealed
   * Inline
   * Enum
