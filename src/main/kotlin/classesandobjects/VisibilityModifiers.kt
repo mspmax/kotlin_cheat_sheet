@@ -29,7 +29,7 @@ internal val baz = 6    // visible inside the same module
  * Classes/Interfaces Level
  *
  *  - private : visible inside this class only (including all its members).
- *              NOTE: Even in nested classes if the members are private then it would
+ *              NOTE : Even in nested classes if the members are private then it would
  *              not be visible for the outer class
  *
  *  - protected : same as private but visible to subclasses
@@ -47,8 +47,14 @@ open class Outer {
     internal val c = 3
     val d = 4  // public by default
 
+    private val bar: Int = 1
+
     protected class Nested {
         val e: Int = 5
+    }
+
+    inner class Inner {
+        fun foo() = bar // NOTE: outer members are visible to inner class in this case
     }
 }
 
