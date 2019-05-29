@@ -8,7 +8,7 @@
 * [Properties(val/var)](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/PropertyValues.kt)
 * [Classes(open, constructors, inheritance)](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/ClassesAndInheritance.kt)
   * [Data](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/DataClasses.kt)
-  * Sealed
+  * [Sealed](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/SealedClasses.kt)
   * Inline
   * [Enum](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/EnumClasses.kt)
   * [Nested and Inner](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/NestedAndInner.kt)
