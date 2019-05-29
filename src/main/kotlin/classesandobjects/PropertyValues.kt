@@ -73,12 +73,12 @@ var strWithCustomGetterAndSetter: String = "default"
     }
 
 var strWithPrivateDefaultSetter: String = "default"
-    private set // If you need to change the visibility of an accessor(valid to bot the getters and setters)
+    private set // If you need to change the visibility of an accessor(valid to both the getters and setters)
 
 var strWithPrivateCustomSetter: String = "default"
-    private set(value) {
+    private set(anyValue) {
         println("do anything you want as this point")
-        field = value // WARNING AGAIN!! value or any value should be assigned at this point
+        field = anyValue // WARNING AGAIN!! value or any value should be assigned at this point
     }
 
 /**
@@ -86,7 +86,7 @@ var strWithPrivateCustomSetter: String = "default"
  *
  * - Why do you want this ?? well, think of dependency injection :P
  * - property can be validated before accessing eg: ::classesandobjects.getStrLateInit.isInitialized  phhheewwwww !!!
- * - The modifier can be used on var properties declared inside the body of a class, top-level properties
+ * - The modifier can be used ONLY on var properties declared inside the body of a class, top-level properties
  *   and local variables.
  * - only when the property does not have a custom getter or setter
  * - must be non-null
@@ -103,7 +103,7 @@ lateinit var strLateInit: String
  *
  */
 
-const val KEY_COLUMN_NAME: String = "key_name"
+const val KEY_FIREBASE_API: String = "key_api"
 
 /**
  * Using standard functions on properties
