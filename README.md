@@ -9,6 +9,7 @@
 * [Classes(open, constructors, inheritance)](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/ClassesAndInheritance.kt)
   * [Data](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/DataClasses.kt)
   * Inline
+  * [Objects](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/Objects.kt)
   * [Enum and Sealed](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/EnumAndSealed.kt)
   * [Nested and Inner](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/NestedAndInner.kt)
 * [Interfaces(properrties, implementing, inheritance)](https://github.com/mspmax/kotlin_cheat_sheet/blob/master/src/main/kotlin/classesandobjects/Interfaces.kt)
