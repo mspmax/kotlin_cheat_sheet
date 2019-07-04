@@ -1,3 +1,5 @@
+package coroutine
+
 import kotlinx.coroutines.*
 import java.util.concurrent.atomic.AtomicLong
 import kotlin.concurrent.thread
@@ -15,11 +17,21 @@ import kotlin.concurrent.thread
  *      One thread can run many coroutines, so we can avoid creating too many threads
  */
 fun main() {
-    //coroutinesDelay()
+    //coroutine.coroutinesDelay()
 
-    //coroutinesAreCheap()
+    //coroutine.coroutinesAreCheap()
 
-    //asyncCoroutine()
+    //coroutine.asyncCoroutine()
+
+    /*runBlocking {
+        coroutine.waitingForJob()
+    }*/
+
+    //coroutine.structuredConcurrency()
+
+    //coroutine.customScopes()
+
+    globalCoroutinesLikeDaemons()
 }
 
 /**
@@ -107,3 +119,73 @@ suspend fun suspendingFunction(num: Int): Int {
     return num
 }
 
+/**
+ * Waiting for a job to finish - non blocking way
+ */
+suspend fun waitingForJob() {
+    val job = GlobalScope.launch {
+        // launch a new coroutine and keep a reference to its Job
+        delay(1000L)
+        println("World!")
+    }
+    println("Hello,")
+    job.join() // wait until child coroutine completes
+    println("Test last")
+}
+
+/**
+ * Instead of launching coroutines in the GlobalScope, just like we usually do with threads
+ * (threads are always global), we can launch coroutines in the specific scope of the operation we are performing.
+ *
+ * Outer coroutine (runBlocking in our example) does not complete until all the coroutines
+ * launched in its scope complete
+ */
+fun structuredConcurrency() = runBlocking {
+    launch {
+        delay(1000L)
+        println("World !")
+    }
+
+    println("Hello")
+}
+
+/**
+ * Creating custom scopes with coroutineScope
+ * -    does not complete until all launched children complete
+ * -    The main difference between runBlocking and coroutineScope is that the latter does not block the
+ *      current thread while waiting for all children to complete
+ */
+fun customScopes() = runBlocking {
+    launch {
+        delay(200L)
+        println("Task from runBlocking")
+    }
+
+    coroutineScope {
+        launch {
+            delay(500L)
+            println("Task from nested launch")
+        }
+
+        delay(100L)
+        println("Task from coroutine scope")
+    }
+
+    println("Coroutine scope is over")
+}
+
+/**
+ * Active coroutines that were launched in GlobalScope do not keep the process alive. They are like daemon threads.
+ *
+ * Daemon threads = once all user threads have finished their execution JVM will exit and all the daemon threads
+ * will be killed. Most of the JVM threads are daemon threads eg: Garbage collection etc
+ */
+fun globalCoroutinesLikeDaemons() = runBlocking {
+    GlobalScope.launch {
+        repeat(1000) { i ->
+            println("I'm sleeping $i ...")
+            delay(500L)
+        }
+    }
+    delay(1300L) // just quit after delay and does not wait for Global Scope to finish
+}
