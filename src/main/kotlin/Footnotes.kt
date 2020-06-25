@@ -1,3 +1,0 @@
-/**
- *  check on yield()
- */

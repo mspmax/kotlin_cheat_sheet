@@ -6,15 +6,25 @@ import kotlinx.coroutines.*
  * This comes in handy when using coroutines in UI applications eg: In Android, we would want to stop any live
  * async operation when the Fragment/Activity goes to onStop()/onDestroy() lifecycle event
  */
+fun main() = runBlocking {
+    var sharedCounter = 0
+    val scope =
+        CoroutineScope(newFixedThreadPoolContext(4, "synchronizationPool")) // We want our code to run on 4 threads
+    scope.launch {
+        val coroutines = 1.rangeTo(1000).map { //create 1000 coroutines (light-weight threads).
+            launch {
+                for (i in 1..1000) { // and in each of them, increment the sharedCounter 1000 times.
+                    sharedCounter++
+                }
+            }
+        }
 
-fun main() {
-    //cancelThenJoin()
+        coroutines.forEach { corotuine ->
+            corotuine.join() // wait for all coroutines to finish their jobs.
+        }
+    }.join()
 
-    //cancelAndJoin()
-
-    //cancelCooperatively()
-
-    //coroutineFinally()
+    println("The number of shared counter should be 1000000, but actually is $sharedCounter")
 }
 
 private fun sampleJob(coroutineScope: CoroutineScope): Job = coroutineScope.launch {
